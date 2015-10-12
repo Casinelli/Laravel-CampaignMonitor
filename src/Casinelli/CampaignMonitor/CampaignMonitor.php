@@ -6,25 +6,39 @@ class CampaignMonitor
 {
     protected $app;
 
-    protected $csRestSubscribers = null;
-
     public function __construct($app)
     {
         $this->app = $app;
     }
 
-    public function subscribers($listId)
+    public function campaigns($campaignId = null)
     {
-        return $this->getCsRestSubscribers($listId);
+        return new \CS_REST_Campaigns($campaignId, $this->getAuthTokens());
     }
 
-    protected function getCsRestSubscribers($listId)
+    public function clients($clientId = null)
     {
-        if ($this->csRestSubscribers) {
-            return $this->csRestSubscribers;
-        }
+        return new \CS_REST_Clients($clientId, $this->getAuthTokens());
+    }
 
-        return $this->csRestSubscribers = new \CS_REST_Subscribers($listId, $this->getAuthTokens());
+    public function lists($listId = null)
+    {
+        return new \CS_REST_Lists($listId, $this->getAuthTokens());
+    }
+
+    public function segments($segmentId = null)
+    {
+        return new \CS_REST_Segments($segmentId, $this->getAuthTokens());
+    }
+
+    public function template($templateId = null)
+    {
+        return new \CS_REST_Templates($templateId, $this->getAuthTokens());
+    }
+
+    public function subscribers($listId = null)
+    {
+        return new \CS_REST_Subscribers($listId, $this->getAuthTokens());
     }
 
     protected function getAuthTokens()
