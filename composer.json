@@ -1,0 +1,27 @@
+{
+    "name": "casinelli/laravel-campaignmonitor",
+    "description": "A Laravel 5 wrapper for Campaign Monitor",
+    "keywords": ["laravel", "laravel5", "campaign monitor", "wrapper", "newsletter"],
+	"license": "MIT License",
+    "authors": [
+        {
+            "name": "Giovanni Casinelli",
+            "email": "giovanni.casinelli@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Casinelli\\CampaignMonitor": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
