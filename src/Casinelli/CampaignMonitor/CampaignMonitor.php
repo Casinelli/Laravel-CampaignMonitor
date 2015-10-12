@@ -44,7 +44,7 @@ class CampaignMonitor
     protected function getAuthTokens()
     {
         return [
-            'apy_key' => $this->app['config']['campaignmonitor.api_key'],
+            'api_key' => $this->app['config']['campaignmonitor.api_key'],
         ];
     }
 }
