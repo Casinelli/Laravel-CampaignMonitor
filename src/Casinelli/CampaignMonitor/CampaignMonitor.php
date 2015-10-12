@@ -6,7 +6,7 @@ class CampaignMonitor
 {
     protected $app;
 
-    protected $csRestSubscibers = null;
+    protected $csRestSubscribers = null;
 
     public function __construct($app)
     {
@@ -21,7 +21,7 @@ class CampaignMonitor
     protected function getCsRestSubscribers($listId)
     {
         if ($this->csRestSubscribers) {
-            return $this->csRestSubscibers;
+            return $this->csRestSubscribers;
         }
 
         return $this->csRestSubscribers = new CS_REST_Subscribers($listId, $this->getAuthTokens());
