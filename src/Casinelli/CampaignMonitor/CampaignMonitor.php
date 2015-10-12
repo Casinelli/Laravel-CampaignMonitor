@@ -15,7 +15,7 @@ class CampaignMonitor
 
     public function subscribers($listId)
     {
-        return $this->getRESTSubscribers($listId);
+        return $this->getCsRestSubscribers($listId);
     }
 
     protected function getCsRestSubscribers($listId)
