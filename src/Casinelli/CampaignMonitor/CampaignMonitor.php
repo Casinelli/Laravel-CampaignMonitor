@@ -24,7 +24,7 @@ class CampaignMonitor
             return $this->csRestSubscribers;
         }
 
-        return $this->csRestSubscribers = new CS_REST_Subscribers($listId, $this->getAuthTokens());
+        return $this->csRestSubscribers = new \CS_REST_Subscribers($listId, $this->getAuthTokens());
     }
 
     protected function getAuthTokens()
