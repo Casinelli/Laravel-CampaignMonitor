@@ -41,6 +41,11 @@ class CampaignMonitor
         return new \CS_REST_Subscribers($listId, $this->getAuthTokens());
     }
 
+    public function classicSend($clientId = null)
+    {
+        return new \CS_REST_Transactional_ClassicEmail($this->getAuthTokens(), $clientId);
+    }
+
     protected function getAuthTokens()
     {
         return [
