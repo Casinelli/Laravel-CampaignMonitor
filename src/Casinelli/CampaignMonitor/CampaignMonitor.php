@@ -5,10 +5,12 @@ namespace Casinelli\CampaignMonitor;
 class CampaignMonitor
 {
     protected $app;
+    protected $api_key;
 
-    public function __construct($app)
+    public function __construct($app, $api_key = null)
     {
         $this->app = $app;
+	$this->api_key = $api_key;
     }
 
     public function campaigns($campaignId = null)
@@ -58,6 +60,12 @@ class CampaignMonitor
 
     protected function getAuthTokens()
     {
+	if($this->api_key != null){
+	  return [
+	  	'api_key' => $this->api_key
+	  ];
+	}
+
         return [
             'api_key' => $this->app['config']['campaignmonitor.api_key'],
         ];
