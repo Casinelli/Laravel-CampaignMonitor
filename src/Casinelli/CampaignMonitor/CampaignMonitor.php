@@ -53,7 +53,7 @@ class CampaignMonitor
         return new \CS_REST_Transactional_ClassicEmail($this->getAuthTokens(), $clientId);
     }
 
-    public function smartSend($smartId = null, $clientId)
+    public function smartSend($smartId = null, $clientId = null)
     {
         return new \CS_REST_Transactional_SmartEmail($smartId, $this->getAuthTokens(), $clientId);
     }
