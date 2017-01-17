@@ -41,7 +41,7 @@ Laravel-CampaignMonitor also ships with a facade. You can register the facade in
 Create the configuration file using artisan
 
 ~~~
-$ php artisan vendor:publish
+$ php artisan vendor:publish --provider="Casinelli\CampaignMonitor\CampaignMonitorServiceProvider"
 ~~~
 
 And set your own API key and Client ID:
