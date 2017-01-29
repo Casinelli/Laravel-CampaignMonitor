@@ -19,7 +19,7 @@ class CampaignMonitorServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/campaignmonitor.php', 'campaignmonitor');
 
-        $this->app['campaignmonitor'] = $this->app->share(function ($app) {
+        $this->app->singleton('campaignmonitor', function ($app) {
             return new CampaignMonitor($app);
         });
     }
